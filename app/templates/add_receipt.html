@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load widget_tweaks %}
+    <style>
+        body{
+          
+          background-image: url('https://img.freepik.com/free-photo/abstract-luxury-clear-yellow-wall-well-use-as-backdrop-background-layout_1258-207.jpg');
+          
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        
+            .page {
+  width: 66%;
+  border: 3px solid rgb(23, 3, 3);
+  padding: 50px;
+  margin: 20px;
+  margin-left: 180px;
+}
+        
+      </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Add Invoice</title>
+  </head>
+  <body>
+  
+
+  <div class="container">
+
+    {% block content %}
+    <h1 style="text-align: center; padding-top: 1em; padding-bottom: 1em; color: rgb(237, 9, 9);">Generate a New Receipt Here</h1>
+<div class="container" ><div class="page">
+    <h2 class="text-center" style="font-family: 'Times New Roman', Times, serif; color: rgb(4, 5, 5);">Merida Tech Minds Pvt Ltd <br><span style="font-size: medium;">
+        Skill Learning Academy</span>
+          </h2>
+          <hr style="height: 2vh; color: rgb(33, 31, 31);">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <h6 > <i class="bi bi-person-fill" ></i> &nbsp; Received from</h6>
+            {% render_field form.received_from class='form-control' %}
+        </div>
+<br>
+
+<div class="form-group">
+    <h6 > <i class="bi bi-reception-0" ></i> &nbsp; Customer GST No</h6>
+    {% render_field form.customer_gst_no class='form-control' %}
+</div><br>
+
+
+
+
+
+
+
+<div class="form-group">
+    <h6 > <i class="bi bi-card-checklist" ></i> &nbsp; GST Amount</h6>
+    <div>
+        {% render_field form.gst_amount class='form-control' %}
+      </div>
+     
+</div><br>
+
+
+
+
+<div class="form-group">
+    <h6 > <i class="bi bi-list-ol"></i> &nbsp; Course Amount</h6>
+    {% render_field form.course_amount class='form-control' %}
+</div><br>
+
+
+<div class="form-group">
+    <h6 > <i class="bi bi-cash-stack" ></i> &nbsp; For the Course of</h6>
+    {% render_field form.for_the_course_of class='form-control' %}
+</div><br>
+
+
+<div class="form-group">
+    <h6 > <i class="bi bi-cash-stack" ></i> &nbsp; For the Course of-2</h6>
+    {% render_field form.for_the_course_of2 class='form-control' %}
+</div><br>
+
+
+
+<div class="form-group">
+    <h6 > <i class="bi bi-cash-stack" ></i> &nbsp; For the Course of-3</h6>
+    {% render_field form.for_the_course_of3 class='form-control' %}
+</div><br>
+
+
+<div class="form-group">
+    <h6 > <i class="bi bi-list-ol"></i> &nbsp; Description</h6>
+    {% render_field form.description class='form-control' %}
+</div><br>
+
+<div class="form-group">
+    <h6 > <i class="bi bi-list-ol"></i> &nbsp; Quantity</h6>
+    {% render_field form.quantity class='form-control' %}
+</div><br>
+
+<div class="form-group">
+    <h6 > <i class="bi bi-cash-stack" ></i> &nbsp; Amount</h6>
+    {% render_field form.amount class='form-control' %}
+</div><br>
+
+
+
+
+
+
+<div class="form-group">
+    <h6 > <i class="bi bi-list-ol" ></i> &nbsp; Description-2</h6>
+    {% render_field form.description2 class='form-control' %}
+</div><br>
+
+<div class="form-group">
+    <h6 > <i class="bi bi-list-ol" ></i> &nbsp; Quantity</h6>
+    {% render_field form.quantity2 class='form-control' %}
+</div><br>
+
+<div class="form-group">
+    <h6 > <i class="bi bi-cash-stack" ></i> &nbsp; Amount</h6>
+    {% render_field form.amount2 class='form-control' %}
+</div><br>
+
+
+
+
+
+<div class="form-group">
+    <h6 > <i class="bi bi-list-ol" ></i> &nbsp; Description-3</h6>
+    {% render_field form.description class='form-control' %}
+</div><br>
+
+<div class="form-group">
+    <h6 > <i class="bi bi-list-ol" ></i> &nbsp; Quantity</h6>
+    {% render_field form.quantity3 class='form-control' %}
+</div><br>
+
+<div class="form-group">
+    <h6 > <i class="bi bi-cash-stack"></i> &nbsp; Amount</h6>
+    {% render_field form.amount3 class='form-control' %}
+</div><br>
+
+<hr>
+<div><br>
+    <h6><i class="bi bi-person-vcard-fill"></i> &nbsp; select payment mode</h6>
+    {% render_field form.payment_mode class='form-control' %}
+  </div>
+
+  <div><br>
+    <h6> <i class="bi bi-credit-card-fill"></i> &nbsp; if card no(card no)</h6>
+    {% render_field form.card_no class='form-control' %}
+  </div>
+
+
+  <div><br>
+    <h6><i class="bi bi-tablet-fill"></i> &nbsp; if mobile Transaction(transaction id)</h6>
+    {% render_field form.transaction_id class='form-control' %}
+  </div>
+
+  <div>
+    <br><h6><i class="bi bi-receipt"></i> &nbsp; if cheque(cheque no)</h6>
+    {% render_field form.cheque_no class='form-control' %}<br><br>
+  </div>
+
+
+
+
+
+     <center>  <input type="submit" class="btn btn-danger"></center> 
+    </form><br><br></div>
+</div>
+    {% endblock content %}
+  </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

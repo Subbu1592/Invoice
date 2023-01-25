@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>pdf</title>
+  <style>
+    footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 75px;
+}
+
+footer hr {
+    margin-bottom: -22px;
+    border-top: 3px ;
+}
+
+footer a {
+    color: rgb(235, 197, 197);
+}
+
+footer p {
+    padding: 6px;
+    border: 3px solid ;
+    background-color: rgb(235, 185, 185);
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+}
+
+
+.table {
+        --bs-table-bg: transparent;
+        --bs-table-striped-color: #495057;
+        --bs-table-striped-bg: #f8f9fa;
+        --bs-table-active-color: #495057;
+        --bs-table-active-bg: #f8f9fa;
+        --bs-table-hover-color: #495057;
+        --bs-table-hover-bg: #f8f9fa;
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #495057;
+        vertical-align: top;
+        border-color: #eff2f7; }
+
+
+
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+
+
+ 
+  </style>
+  </head>
+  <body>
+    
+    
+   
+    
+    <div class="container">
+       <img src="{{"data:image/png;base64,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"}}" alt="" width="230px" height="60px" style="background-color: #495057; "> 
+      <h1 style="text-align:  center; font-family: 'Times New Roman', Times, serif;">Merida Skill Learning Academy</h1>
+        <h3 style="text-align:  center; font-family: 'Times New Roman', Times, serif;">A Division of Merida Tech Minds (OPC) PVT LTD</h3>
+        <p style="text-align:  center; font-family: 'Times New Roman', Times, serif;">30th Cross, jayanagar 4th Block, Bangalore -560011 <br>
+        E-mail:info@skilllearningacademy.com</p>
+      <center><h3>(Receipt)</h3></center>
+    </div>
+
+
+     
+
+<hr>
+    {% for a in receipt %}
+
+<div class="my-5 page" size="A4">
+  <div class="p-5">
+      <section class="top-content bb d-flex justify-content-between">
+          <div class="logo">
+              
+          </div>
+          <div class="top-left">
+              <div class="graphic-path">
+                  <h2 class="ms-3">Received From: {{a.received_from}}      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Date: {{a.date}}  </h2>
+                  
+
+                    <h2>Receipt No. <span>{{a.id}}</span></h2>
+                  <h2>GST Amount: {{a.gst_amount}}</h2>
+              </div>
+              <div class="position-relative">
+                  <h2>Course Amount :{{a.course_amount}}</h2>
+                  <h2>For the Course of: {{a.description}}, {{a.description2}}, {{a.description3}}</h2>
+          </div>
+      </section>
+
+      <section class="store-user mt-5">
+          <div class="col-10">
+              <div class="row bb pb-3">
+                  <div class="col-7">
+                      
+                      
+                      
+                      
+                      <div class="container">
+                      <h3 style="text-align: right; ">GST NUMBER: ABC1255AZA1</h3>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="col-5">
+                      <p></p>
+                      <h2></h2>
+                      <p class="address"> </p>
+                      <div class="txn mt-2"></div>
+                  </div>
+              </div>
+              <div class="row extra-info pt-3">
+                  <div class="col-7">
+                      
+                  </div>
+                  <div class="col-5">
+                      <p></p>
+                  </div>
+              </div>
+          </div>
+      </section>
+{% endfor %}
+
+
+<div class="col-5">
+  <p></p>
+  <h2></h2>
+  <p class="address"> </p>
+  <div class="txn mt-2"></div>
+</div>
+</div>
+<div class="row extra-info pt-3">
+<div class="col-7">
+  
+</div>
+<div class="col-5">
+  <p></p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="product-area mt-4">
+<div class="table-responsive" style="height:40px">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+{% for a in receipt %}
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-left:1px solid #333; border-right:1px solid #333;"
+width="34%"  align="center" >Sl no</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-right:1px solid #333;"
+width="40%" align="center">Description</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-right:1px solid #333;"
+width="40%" align="center">Quantity</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-right:1px solid #333;"
+width="40%" align="center">Unit price</td>
+
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px; border-top:1px solid #333; border-bottom:1px solid #333; border-right:1px solid #333;"
+width="30%" align="center">Amount</td>
+</tr>
+<tr>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-left:1px solid #333; border-right:1px solid #333;"
+height="32" align="center">1</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+height:  align="center">{{a.description}} <br>
+
+
+</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.quantity}}</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.unit_price}}</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.amount}}</td>
+</tr>
+
+<tr>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-left:1px solid #333; border-right:1px solid #333;"
+height="32" align="center">2</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+height:  align="center">{{a.description2}} <br>
+
+
+</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.quantity2}}</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.unit_price2}}</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.amount2}}</td>
+</tr>
+
+<tr>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-left:1px solid #333; border-right:1px solid #333;"
+height="32" align="center">3</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+height:  align="center">{{a.description3}} <br>
+
+
+</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.quantity3}}</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.unit_price3}}</td>
+<td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px; border-bottom:1px solid #333; border-right:1px solid #333;"
+align="center">{{a.amount3}}</td>
+</tr>
+
+</table>
+</div>
+<br><br>
+
+<h1>Total Amount: {{total_amount}} </h1>
+<hr>
+</section>
+<div>
+  <center><h3> <u> Payment Info </u> </h3></center>
+<br>
+  <h1>Mode of payment: {{a.payment_mode}}</h1>
+  <h1>If card (Card no): {{a.card_no}} </h1>
+  <h1>If digital transaction (Transaction id): {{a.transaction_id}} </h1>
+  <h1>If Cheque (Cheque No): {{a.cheque_no}} </h1>
+
+  
+</div>
+        
+<br><br>
+<br><br><br><br><br>
+              
+{% endfor %}
+<div id="bottom" style="bottom: 0; position: absolute;">
+  <div class="container">
+    <h1 style="display: inline-block; ">Client Signature</h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <h1 style="display: inline-block">Admin Signature</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h1 style="display: inline-block">Counsellor Signature</h1>
+  </div>
+
+
+
+<!-- Cart BG -->
+<div id="footer" >
+
+  
+</div>
+
+<footer>
+    <hr>
+    <p class="m-0 text-center">
+        Merida Tech Minds
+    </p>
+    <div class="social pt-3">
+        
+            
+        
+    </div>
+</footer>
+</div>
+</div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+   
+  </body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load widget_tweaks %}
+    <style>
+      body{
+        
+        background-image: url('https://img.freepik.com/free-photo/abstract-textured-backgound_1258-30517.jpg?w=360');
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Add</title>
+  </head>
+  <body>
+    <br><br>
+    <div class="container" >
+      <h1 class="text-center text-danger">Generate Receipt for the existing Invoice</h1><br>
+    </div>
+    <div class="container opacity-25">
+  <form method="POST">
+
+
+   
+
+    {% csrf_token %}
+  <div class="form-control " style="max-width: 60%; margin-left: 20%;">
+<div class="row">
+  <h2 class="text-center" style="font-family: 'Times New Roman', Times, serif;">Merida Tech Minds Pvt Ltd <br><span style="font-size: medium;">
+Skill Learning Academy</span>
+  </h2>
+
+  <hr style="height: 2vh; color: brown;">
+ <center> <div style="width: 50%;">
+    <h5> <i class="bi bi-printer-fill"></i> &nbsp; Select the invoice</h5>
+    {% render_field form.InvoiceId class='form-control' %}
+  </div></center>
+  <br><br>
+
+  <div ><br><br>
+    <h6> <i class="bi bi-person-fill"></i> &nbsp; Received From</h6>
+    {% render_field form.received_from class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.date class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.customer_gst_no class='form-control' %}
+  </div>
+<br>
+  <div>
+    <h6><i class="bi bi-cash-coin"></i> &nbsp; Gst Amount</h6>
+    {% render_field form.gst_amount class='form-control' %}
+  </div>
+
+  <div><br>
+    <h6> <i class="bi bi-cash"></i> &nbsp; Course Amount</h6>
+    {% render_field form.course_amount class='form-control' %}
+  </div>
+
+
+  <div><br>
+    <h6><i class="bi bi-book-half"></i> &nbsp; For the course of</h6>
+    {% render_field form.for_the_course_of class='form-control' %}
+  </div>
+
+  <div><br>
+    <h6> <i class="bi bi-book-half"></i> &nbsp; For the course of2</h6>
+    {% render_field form.for_the_course_of2 class='form-control' %}
+  </div>
+
+  <div><br>
+     <h6> <i class="bi bi-book-half"></i> &nbsp; For the course of3</h6>
+    {% render_field form.for_the_course_of3 class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.description class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.description2 class='form-control' %}
+  </div>
+
+
+  <div>
+    {% render_field form.description3 class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.quantity class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.quantity2 class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.quantity3 class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.amount class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.amount2 class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.amount2 class='form-control' %}
+  </div>
+
+  <div>
+    {% render_field form.amount3 class='form-control' %}
+  </div>
+
+  <div><br>
+    <h6><i class="bi bi-person-vcard-fill"></i> &nbsp; select payment mode</h6>
+    {% render_field form.payment_mode class='form-control' %}
+  </div>
+
+  <div><br>
+    <h6> <i class="bi bi-credit-card-fill"></i> &nbsp; if card no(card no)</h6>
+    {% render_field form.card_no class='form-control' %}
+  </div>
+
+
+  <div><br>
+    <h6><i class="bi bi-tablet-fill"></i> &nbsp; if mobile Transaction(transaction id)</h6>
+    {% render_field form.transaction_id class='form-control' %}
+  </div>
+
+  <div>
+    <br><h6><i class="bi bi-receipt"></i> &nbsp; if cheque(cheque no)</h6>
+    {% render_field form.cheque_no class='form-control' %}<br><br><center><button type="submit" class="btn btn-danger">submit</button></center>
+  </div>
+
+</div>
+
+</div>
+<br>
+
+<br><br><br>
+
+  </form>
+</div>
+
+  
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

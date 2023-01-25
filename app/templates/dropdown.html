@@ -1,0 +1,18 @@
+<form action="/add" method="POST">
+<table>
+    <tr>
+        <td>category name:</td>
+        <td>
+<select name="dropdown1" id="">
+    {% for e in invoice %}
+    <option value="{{e.id}}">{{e.bill_to}}</option>
+    {% endfor %}
+</select>
+
+        </td>
+    </tr>
+</table>
+
+
+
+</form>

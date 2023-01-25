@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>pdf</title>
+  <style>
+    footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 75px;
+}
+
+footer hr {
+    margin-bottom: -22px;
+    border-top: 3px ;
+}
+
+footer a {
+    color: rgb(235, 197, 197);
+}
+
+footer p {
+    padding: 6px;
+    border: 3px solid ;
+    background-color: rgb(235, 185, 185);
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+}
+
+
+.table {
+        --bs-table-bg: transparent;
+        --bs-table-striped-color: #495057;
+        --bs-table-striped-bg: #f8f9fa;
+        --bs-table-active-color: #495057;
+        --bs-table-active-bg: #f8f9fa;
+        --bs-table-hover-color: #495057;
+        --bs-table-hover-bg: #f8f9fa;
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #495057;
+        vertical-align: top;
+        border-color: #eff2f7; }
+
+
+
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+
+  #bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+ 
+  </style>
+  </head>
+  <body>
+    {% for e in invoice %}
+   
+    
+    <div class="container">
+      <img src="{{e.logo.path}}" alt="" width="200px" height="55px" style="background-color: #495057; ">
+        <h1 style="text-align:  center; font-family: 'Times New Roman', Times, serif;"> <u>Notes and Terms</u> </h1>
+       
+        E-mail:info@skilllearningacademy.com</p>
+        <hr style=" height: 2px; color:brown">
+    </div>
+
+
+   
+              
+    <div class="container" style="position:fixed; bottom: 0;">
+      
+
+      
+      <p style="text-align:  center; font-family: 'Times New Roman', Times, serif;">Merida Skill Learning Acedemy is unable to offer refunds for cancellations outside of our control. i,e. adverse weather conditions, terrorist attack, flooding, infectious disease, industrial action or verse refusals. An alternative training date will be offered. the Academy is not responsible for any loss of income, accommodation/travelling costs students may incur due to the cancellation of cources.
+      </p>
+        <br><br>
+        <p style="font-size: medium;">
+        &#x2022; Courses within the Packages must be attended by the same person. <br>
+        &#x2022; Courses within the packages cannot be changed or substitued with any other courses, only the specified courses will be provided <br>
+     
+     
+        &#x2022; We reserve the right to amenounces you will be charged Rs 1000 as an admin fee. <br>
+        &#x2022; Dates must be selected at time of booking. Training dates are subjected to availability at preferred training center & places are not confirmed until your booking has been processed by our team. All training booked as part of a package must be taken within 3 months of date of booking the package. <br>
+        &#x2022; In the event of a geniune reason for cancellation (proof of which may be required); of a confirmed training date notified prior to the booked training date, a request for a transfer will be considered at the discretion of the Merida Skill Learning Academy
+        (subject to availability). if successful, an administration fee of 5% on Total course fee per course date will be charged.
+        <br>
+        We need 1 week notice of changing your course date, anything under this will result in an admin fee.
+        <br>
+        &#x2022; Non-attendance where no prior notice is given will be handled at the discretion of The Merida Skill Learning Academy and may 
+        result in loss of course fees, including the booking fee.
+        <br>
+        &#x2022; Should you be unable to attend a confirmed training date for medical reasons, a valid medical certificate covering the named students
+        and day of the booked training will be required to waiver the fee to reschedule. Under medical or compassionate
+        circumstances(proof of which may be required) and where immediate reschedule might not be possible; a credit may be placed on files as a gesture
+        of goodwill. Credits will be valid towards training courses only and run for a period of upto 3 months from the date of issue at which time the course fees would be forfeited. No refund of course fees can be issued.
+        <br>
+        &#x2022; Write to Info@skilllearningacademy.com regarding your reschedule request(or Non-attendance).
+        &#x2022; Booked training is non-transferable to an alternative student. Please ensure the booking is made giving the correct
+        name of the person attending the courses at the time of making payment. <br>
+        Amendments to this will be chargeable at Rs 500 per course date/person, where possible for a change to be accommodated and a minimum of '48 hours' notice prior to the course date is 
+        required, in writing.
+        <br>
+
+        &#x2022; In the event that the Merida Skill Learning Academy should have to cancel your course for reasons outside of our control; <br>
+        The Enhance Me Training Academy will endeavour to give students notice of any cancellation by telephone and/or email.
+        The Academy is not responsible for any accommodation/travelling costs students may incur due to the cancellation of courses.  
+
+      </p>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></br></br>
+  </div>
+
+  <div id="bottom" style="bottom: 0; position: absolute;">
+  <div class="container">
+    <h1 style="text-align: center;">Since it is digital copy signatures are not mentioned</h1>
+    <h1 style="display: inline-block; ">Client Signature</h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <h1 style="display: inline-block">Admin Signature</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h1 style="display: inline-block">Counsellor Signature</h1>
+  </div>
+
+
+ 
+              <!-- Cart BG -->
+              <div id="footer" >
+
+                
+              </div>
+             
+              <footer style="bottom: 0;">
+                  <hr>
+                  <p class="m-0 text-center">
+                      Merida Tech Minds
+                  </p>
+                  <div class="social pt-3">
+                      
+                          
+                      
+                  </div>
+              </footer>
+          </div>
+      </div>
+    </div>
+  
+        {% endfor %}
+     
+<hr>
+    
+       
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+   
+  </body>
+</html>
